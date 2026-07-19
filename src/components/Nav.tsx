@@ -11,9 +11,12 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
-    <header className="border-b border-text/10 bg-bg-primary">
+    <header
+      className={`border-b border-text/10 ${isHome ? "bg-transparent" : "bg-bg-primary"}`}
+    >
       <nav className="flex items-center justify-between px-4 py-5 md:px-10 lg:px-20">
         <Link
           href="/"

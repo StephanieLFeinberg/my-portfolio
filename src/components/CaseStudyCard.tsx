@@ -7,7 +7,7 @@ export default function CaseStudyCard({
 }: {
   caseStudy: CaseStudyMeta;
 }) {
-  const category = caseStudy.tags?.[0];
+  const year = caseStudy.year;
 
   return (
     <Link
@@ -35,27 +35,13 @@ export default function CaseStudyCard({
       </div>
       <div className="flex items-center justify-between gap-4 p-6">
         <div>
-          {category && (
-            <p className="flex items-center gap-2 text-xs font-semibold tracking-wide text-text/60 uppercase">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-3.5 w-3.5"
-              >
-                <path d="M20.59 13.41 11 3.83a2 2 0 0 0-1.42-.58H4a1 1 0 0 0-1 1v5.58a2 2 0 0 0 .58 1.42l9.59 9.59a2 2 0 0 0 2.83 0l4.59-4.59a2 2 0 0 0 0-2.83Z" />
-                <circle cx="7.5" cy="7.5" r="1" fill="currentColor" />
-              </svg>
-              {category}
-            </p>
-          )}
+          {year && <p className="eyebrow">{year}</p>}
           <h3 className="mt-2 font-heading text-2xl font-bold tracking-tight uppercase">
             {caseStudy.title}
           </h3>
+          {caseStudy.summary && (
+            <p className="mt-2 font-body text-text">{caseStudy.summary}</p>
+          )}
         </div>
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-brown text-white">
           <svg

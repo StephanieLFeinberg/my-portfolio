@@ -48,6 +48,11 @@ export default function StyleGuidePage() {
           demonstrates the typeface at reading size.
         </p>
       </section>
+
+      <section className="mt-12 max-w-xl">
+        <h2 className="font-heading text-xl">Eyebrow</h2>
+        <p className="eyebrow mt-4">Design System</p>
+      </section>
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import Container from "@/components/ui/Container";
-import { getAllCaseStudies } from "@/lib/case-studies";
+import { getPublishedCaseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function WorkIndexPage() {
-  const caseStudies = getAllCaseStudies();
+  const caseStudies = getPublishedCaseStudies();
 
   return (
     <Container>

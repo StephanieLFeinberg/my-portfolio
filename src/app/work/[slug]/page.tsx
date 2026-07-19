@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
 import {
-  getAllCaseStudies,
   getCaseStudyMeta,
-  getCaseStudySlugs,
+  getPublishedCaseStudies,
 } from "@/lib/case-studies";
 
 export function generateStaticParams() {
-  return getCaseStudySlugs().map((slug) => ({ slug }));
+  return getPublishedCaseStudies().map((caseStudy) => ({
+    slug: caseStudy.slug,
+  }));
 }
 
 export const dynamicParams = false;
@@ -21,7 +22,7 @@ export async function generateMetadata(props: PageProps<"/work/[slug]">) {
 export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
   const { slug } = await props.params;
 
-  if (!getAllCaseStudies().some((caseStudy) => caseStudy.slug === slug)) {
+  if (!getPublishedCaseStudies().some((caseStudy) => caseStudy.slug === slug)) {
     notFound();
   }
 
@@ -34,7 +35,7 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
     <Container>
       <article className="mx-auto max-w-3xl">
         <header className="mb-10">
-          <p className="text-xs uppercase tracking-wide text-text/60">
+          <p className="eyebrow">
             {meta.year ?? meta.date}
             {meta.role ? ` · ${meta.role}` : ""}
           </p>

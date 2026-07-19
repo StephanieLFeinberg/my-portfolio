@@ -13,6 +13,7 @@ export type CaseStudyFrontmatter = {
   tags?: string[];
   image?: string;
   previewBg?: string;
+  published?: boolean;
 };
 
 export type CaseStudyMeta = CaseStudyFrontmatter & { slug: string };
@@ -35,4 +36,10 @@ export function getAllCaseStudies(): CaseStudyMeta[] {
   return getCaseStudySlugs()
     .map(getCaseStudyMeta)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getPublishedCaseStudies(): CaseStudyMeta[] {
+  return getAllCaseStudies().filter(
+    (caseStudy) => caseStudy.published !== false,
+  );
 }

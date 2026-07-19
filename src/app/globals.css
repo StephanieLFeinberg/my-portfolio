@@ -6,6 +6,7 @@
   --color-bg-primary: #F5F5F2;
   --color-bg-secondary: #FAFAF8;
   --color-brand-brown: #3E2723;
+  --color-accent-sage: #6B7C60;
   --font-heading: var(--font-lato);
   --font-body: var(--font-lato);
 }
@@ -27,6 +28,14 @@ html {
 .animate-point-down {
   animation: point-down 0.6s ease-in-out 2;
   animation-delay: 0.3s;
+}
+
+.eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
 }
 
 body {
