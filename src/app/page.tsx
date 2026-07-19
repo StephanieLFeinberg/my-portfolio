@@ -47,12 +47,16 @@ export default function Home() {
 
         {featured.length > 0 && (
           <section id="selected-work" className="mt-20 scroll-mt-10">
-            <h2 className="font-heading text-xl font-semibold tracking-tight">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight">
               Selected work
             </h2>
             <div className="mt-6 grid gap-8 lg:grid-cols-2">
-              {featured.map((caseStudy) => (
-                <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
+              {featured.map((caseStudy, index) => (
+                <CaseStudyCard
+                  key={caseStudy.slug}
+                  caseStudy={caseStudy}
+                  index={index}
+                />
               ))}
             </div>
           </section>

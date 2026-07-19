@@ -2,12 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudyMeta } from "@/lib/case-studies";
 
+const CARD_PALETTE = ["#F5F5F2", "#E8EBE3", "#E9E0DA", "#E9E5DE"];
+
+const GRAIN_URL =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
+
 export default function CaseStudyCard({
   caseStudy,
+  index = 0,
 }: {
   caseStudy: CaseStudyMeta;
+  index?: number;
 }) {
   const year = caseStudy.year;
+  const backgroundColor = CARD_PALETTE[index % CARD_PALETTE.length];
 
   return (
     <Link
@@ -15,13 +23,17 @@ export default function CaseStudyCard({
       className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
       <div
-        className="relative flex aspect-[3/2] items-center justify-center bg-bg-secondary text-sm text-text/40 transition-transform duration-300 group-hover:scale-105"
-        style={
-          caseStudy.previewBg
-            ? { backgroundColor: caseStudy.previewBg }
-            : undefined
-        }
+        className="relative flex aspect-[3/2] items-center justify-center overflow-hidden text-sm text-text/40 transition-transform duration-300 group-hover:scale-105"
+        style={{ backgroundColor }}
       >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.14]"
+          style={{
+            backgroundImage: `url("${GRAIN_URL}")`,
+            backgroundRepeat: "repeat",
+          }}
+        />
         {caseStudy.image ? (
           <Image
             src={caseStudy.image}

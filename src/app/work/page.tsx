@@ -18,8 +18,8 @@ export default function WorkIndexPage() {
       </h1>
       <p className="mt-2 text-text/80">Selected case studies.</p>
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
-        {caseStudies.map((caseStudy) => (
-          <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
+        {caseStudies.map((caseStudy, index) => (
+          <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} index={index} />
         ))}
       </div>
     </Container>
