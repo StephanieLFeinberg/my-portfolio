@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import ScrollDownArrow from "@/components/ScrollDownArrow";
 import { getPublishedCaseStudies } from "@/lib/case-studies";
 
 export default function Home() {
@@ -13,35 +14,30 @@ export default function Home() {
       />
       <Container transparent>
         <section className="flex min-h-[70vh] flex-col">
-          <div className="flex w-full max-w-4xl flex-1 flex-col">
+          <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center">
             <div className="flex flex-1 flex-col justify-center">
-              <p className="text-lg text-text">
-                Hi, I&apos;m Stephanie Feinberg!
-              </p>
-              <h1 className="mt-4 font-heading text-5xl font-bold leading-tight sm:text-6xl">
-                A senior product designer blending empathy, clarity, and
-                impact.
+              <h1 className="font-heading text-[52px] font-bold leading-tight tracking-tight sm:text-[64px]">
+                <span className="line-mask">
+                  <span
+                    className="line-reveal"
+                    style={{ animationDelay: "0s" }}
+                  >
+                    A senior product designer blending
+                  </span>
+                </span>
+                <span className="line-mask">
+                  <span
+                    className="line-reveal"
+                    style={{ animationDelay: "0.9s" }}
+                  >
+                    <span className="font-light italic">empathy</span>,{" "}
+                    <span className="font-light italic">clarity</span>, and{" "}
+                    <span className="font-light italic">impact</span>.
+                  </span>
+                </span>
               </h1>
             </div>
-            <a
-              href="#selected-work"
-              aria-label="Scroll to selected work"
-              className="mb-8 inline-block w-fit animate-point-down text-brand-brown transition-transform hover:translate-y-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-12 w-12"
-              >
-                <line x1="12" y1="4" x2="12" y2="19" />
-                <polyline points="6 13 12 19 18 13" />
-              </svg>
-            </a>
+            <ScrollDownArrow />
           </div>
         </section>
 

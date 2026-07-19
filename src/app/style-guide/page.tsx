@@ -43,7 +43,13 @@ export default function StyleGuidePage() {
         <h3 className="mt-4 font-heading text-3xl">
           The quick brown fox jumps over the lazy dog
         </h3>
-        <p className="mt-3 font-body">
+        <p className="mt-3 font-body text-sm text-text/60">Body 1 — 16px</p>
+        <p className="mt-1 font-body">
+          Headings and body text are both set in Lato. This paragraph
+          demonstrates the typeface at reading size.
+        </p>
+        <p className="mt-4 font-body text-sm text-text/60">Body 2 — 18px</p>
+        <p className="mt-1 font-body text-lg">
           Headings and body text are both set in Lato. This paragraph
           demonstrates the typeface at reading size.
         </p>

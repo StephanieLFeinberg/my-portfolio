@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "ghost";
 type Size = "medium" | "large";
 
 const base =
@@ -16,6 +16,8 @@ const variants: Record<Variant, string> = {
   primary: "bg-brand-brown text-white hover:bg-[#5B4744]",
   secondary:
     "border border-brand-brown bg-white text-brand-brown hover:bg-brand-brown hover:text-white",
+  ghost:
+    "border border-brand-brown/30 bg-brand-brown/5 text-brand-brown hover:bg-brand-brown/10",
 };
 
 type ButtonAsButton = ButtonHTMLAttributes<HTMLButtonElement> & {

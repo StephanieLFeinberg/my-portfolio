@@ -14,6 +14,18 @@ export type CaseStudyFrontmatter = {
   image?: string;
   previewBg?: string;
   published?: boolean;
+  roleDetail?: string;
+  product?: string;
+  team?: string;
+  overview?: string;
+  discoverHeading?: string;
+  discoverBody?: string;
+  defineHeading?: string;
+  defineBody?: string;
+  developHeading?: string;
+  developBody?: string;
+  deliverHeading?: string;
+  deliverBody?: string;
 };
 
 export type CaseStudyMeta = CaseStudyFrontmatter & { slug: string };
