@@ -122,7 +122,7 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
         className="pointer-events-none fixed inset-0 -z-10 h-dvh bg-linear-to-b from-accent-sage/12 to-35% to-bg-primary"
       />
       <section>
-        <div className="mx-auto max-w-6xl px-4 py-24 md:px-10 lg:px-20">
+        <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 lg:px-8">
           <Button
             href="/#selected-work"
             variant="ghost"
@@ -145,13 +145,13 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
             All projects
           </Button>
           <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-bg-secondary">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               {meta.image && (
                 <Image
                   src={meta.image}
                   alt={meta.title}
                   fill
-                  className="object-contain p-8"
+                  className="object-contain"
                 />
               )}
             </div>
@@ -163,38 +163,30 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
               <h1 className="mt-2 font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
                 {meta.title}
               </h1>
-              <dl className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <div>
-                  <dt className="eyebrow text-sm">Role</dt>
-                  <dd className="mt-1 font-body">
-                    {meta.roleDetail ?? LOREM_SHORT}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="eyebrow text-sm">Product</dt>
-                  <dd className="mt-1 font-body">{meta.product ?? LOREM_SHORT}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow text-sm">Team</dt>
-                  <dd className="mt-1 font-body">{meta.team ?? LOREM_SHORT}</dd>
-                </div>
-              </dl>
+              <div className="mt-8 max-w-3xl">
+                {overviewParagraphs.map((paragraph, i) => (
+                  <p key={i} className="mt-6 font-body text-lg text-text">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="mt-16 max-w-3xl">
-            <h2 className="font-heading text-2xl font-semibold tracking-tight">
-              Overview
-            </h2>
-            <p className="mt-2 text-lg text-text/70">
-              The problem, the solution, and the impact.
-            </p>
-            {overviewParagraphs.map((paragraph, i) => (
-              <p key={i} className="mt-6 font-body text-lg text-text">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <dl className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div>
+              <dt className="eyebrow text-sm">Role</dt>
+              <dd className="mt-1 font-body">{meta.roleDetail ?? LOREM_SHORT}</dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-sm">Product</dt>
+              <dd className="mt-1 font-body">{meta.product ?? LOREM_SHORT}</dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-sm">Team</dt>
+              <dd className="mt-1 font-body">{meta.team ?? LOREM_SHORT}</dd>
+            </div>
+          </dl>
         </div>
       </section>
 

@@ -5,19 +5,18 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "medium" | "large";
 
 const base =
-  "inline-flex items-center justify-center rounded-full font-body font-medium transition-colors";
+  "inline-flex items-center justify-center rounded-full font-body text-base font-medium transition-colors";
 
 const sizes: Record<Size, string> = {
-  medium: "px-5 py-2 text-sm",
-  large: "h-[46px] px-6 text-lg",
+  medium: "px-5 py-2",
+  large: "h-[46px] px-6",
 };
 
 const variants: Record<Variant, string> = {
   primary: "bg-brand-brown text-white hover:bg-[#5B4744]",
   secondary:
     "border border-brand-brown bg-white text-brand-brown hover:bg-brand-brown hover:text-white",
-  ghost:
-    "border border-brand-brown/30 bg-brand-brown/5 text-brand-brown hover:bg-brand-brown/10",
+  ghost: "text-brand-brown hover:text-[#5B4744]",
 };
 
 type ButtonAsButton = ButtonHTMLAttributes<HTMLButtonElement> & {
