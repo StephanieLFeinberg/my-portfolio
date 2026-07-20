@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Button from "@/components/ui/Button";
+import CaseStudyPasswordGate from "@/components/CaseStudyPasswordGate";
+import { isCaseStudyUnlocked } from "@/lib/case-study-access";
 import { getCaseStudyMeta, getPublishedCaseStudies } from "@/lib/case-studies";
 
 function renderInline(text: string) {
@@ -111,6 +113,18 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
   }
 
   const meta = getCaseStudyMeta(slug);
+
+  if (meta.passwordProtected && !(await isCaseStudyUnlocked(slug))) {
+    const searchParams = await props.searchParams;
+    return (
+      <CaseStudyPasswordGate
+        slug={slug}
+        title={meta.title}
+        showError={searchParams?.error === "1"}
+      />
+    );
+  }
+
   const overviewParagraphs = meta.overview
     ? meta.overview.trim().split(/\n\s*\n/)
     : [LOREM_LONG];

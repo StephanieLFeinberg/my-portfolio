@@ -14,6 +14,7 @@ export type CaseStudyFrontmatter = {
   image?: string;
   previewBg?: string;
   published?: boolean;
+  passwordProtected?: boolean;
   roleDetail?: string;
   product?: string;
   team?: string;
