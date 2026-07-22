@@ -1,8 +1,12 @@
+import path from "path";
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
 };
 
 const withMDX = createMDX({
