@@ -1,25 +1,86 @@
 ---
 title: "Profile Complete"
-summary: "Redesigning onboarding, leading to a 3% increase in conversions."
-date: "2026-07-19"
+summary: "Streamlining member onboarding without cutting what matters — phase 1 shipped a +3.44pt completion lift worth ~$1M in annual revenue; phase 2 rebuilds the flow in Guild's new design system."
+date: "2026-07-22"
 year: "2026"
 role: "Design & Engineering"
 tags: ["Next.js", "Design Systems", "Case Study"]
 image: "/case-studies/profile-complete.png"
 published: true
 passwordProtected: true
+roleDetail: "Lead designer, from funnel diagnosis through phase 1 delivery and the in-progress phase 2 rebuild."
+product: "Member-facing onboarding and profile-completion flow."
+team: "Myself and one other product designer, plus engineering and data partners confirming downstream dependencies."
+overview: |
+  Guild is an education benefit platform that helps working adults build skills for career growth.
+
+  Profile Complete is the flow members go through right after signing up: a short set of questions that route them into personalized program recommendations. It's most members' first real interaction with Guild's product, so friction there doesn't stay contained, it shows up in every stage downstream.
+discoverHeading: "Problem"
+discoverBody: |
+  One in five members took more than 24 hours to complete their profile after signing up. That delay wasn't neutral — members who completed their profile late had an app start rate of 5.8%, versus 25.9% for members who completed it fast. Onboarding is most members' first real interaction with Guild's product. If it stalls, everything downstream stalls with it.
+
+  We modeled the business case before committing resources: closing the gap by just 5 percentage points (from 80% to 85% same-day completion) could generate roughly 2,200 additional app starts a year — about $1.3M in annual revenue.
+
+  **Why this, why now**
+
+  The trigger was the completion-rate data itself, surfaced during a broader look at funnel health. Once we saw the app-start gap, the question became causal: was slow completion causing lower engagement, or were slower-completing members just lower-intent to begin with? We couldn't fully separate the two, but even a partial causal effect justified the investment given the size of the population affected.
+
+  **Two hypotheses shaped the diagnosis**
+  - Too many questions. The flow asked for more than it needed.
+  - No priming. The flow extracted information and routed people without ever explaining what Guild was or why any of it mattered. It functioned like a form, not a first impression.
+
+  I split the work into two phases: a fast pass to stop the bleeding, and a fuller redesign once we had room to rebuild in the new design system.
+defineHeading: "Opportunity"
+defineBody: |
+  **Phase 1: cut friction, ask with purpose**
+
+  The first pass wasn't about reinventing the flow — it was about removing what didn't earn its place and being honest about the rest. My working principle: if we're going to ask a member something, we should be able to say why, and the member should get something back for answering. Random questions with no visible payoff were the actual source of friction, more than question count on its own.
+
+  Applying that, plus the same three principles that anchored every decision on this project:
+  - Make the abstract concrete. Replace vague long-term benefit language with something specific and tangible.
+  - Avoid choice paralysis. A handful of opinionated recommendations beats showing everything.
+  - Set expectations early. Filter for intent upfront, rather than letting confusion accumulate and cause drop-off later.
+
+  The phase 1 recommendation was:
+  - Remove the ~4 pages that weren't feeding recommendations or routing.
+  - Consolidate the two contact-info pages into one, dropping the state/province field.
+  - Route "currently enrolled" members straight to One Front Door instead of asking follow-up questions in onboarding.
+  - Rewrite the copy on every remaining question to state its value, instead of just asking.
+
+  Later: explore new ways to collect the data we didn't touch, in service of program fit and app start, rather than trying to solve it all in one pass.
+developHeading: "Ideate & Validate"
+developBody: |
+  **The tension: the warm welcome**
+
+  I pushed for a warm welcome moment before we asked members for anything — a beat that led with what Guild does and why it's worth their time, instead of opening with a contact-info form. The product designer I was working with wanted to cut it. His view: every extra screen is friction, and the fastest path to completion is the shortest path, full stop.
+
+  I didn't win that on the strength of my opinion — I won it on testing. When we tested a value-proposition opening against an immediate ask for contact information, members were 5% more likely to continue onboarding when they got the value prop first. The instinct that felt like it was trading speed for warmth turned out to be wrong: framing came first because it was the more efficient path, not despite it.
+
+  **Phase 2: rebuilding in the new design system (in progress)**
+
+  Once phase 1 was live, I moved into the fuller redesign: migrating the flow into Guild's new design system and using that transition as a real opportunity for UX improvements, not just a visual refresh. I'm using vibe-coded prototypes to test interaction and layout changes fast, and working directly with engineering in code, not just in design files, to get the new components implemented correctly rather than handing off specs and hoping.
+
+  Working in code alongside engineering means catching mismatches between design intent and what's technically straightforward much earlier than a typical design-to-dev handoff would. It also means I can iterate on a real, working version of the flow instead of a static prototype.
+
+  **The math that kept the scope honest**
+
+  The obvious next move, once we were already cutting, would have been to keep going: trim further into the five remaining questions (career goal, education level, currently enrolled) along with the two we'd already removed (community support, career confidence). I ran the numbers instead of arguing it on instinct. A 5-point gain in profile completion (90% → 95%) would be wiped out by as little as a 0.38-point drop in completion-to-enrollment conversion downstream (7.12% → 6.75%). A top-of-funnel win that fragile against a downstream cost isn't a win, it's a transfer. The five load-bearing questions stayed; the four that weren't feeding recommendations or routing didn't.
+deliverHeading: "Validation & Outcome"
+deliverBody: |
+  We tested the revised phase 1 flow against 50% of members from 6/17 to 6/24, then shipped to everyone on 6/25.
+  - +3.44 percentage points in signup-to-24-hour-profile-completion conversion (statistically significant)
+  - Projected ~$2.8M in additional annual spend on tuition assistance, or roughly $1M in annual revenue
+
+  **Cross-functional reality**
+
+  Neither phase was a solo design fix. Kickoff surfaced real dependencies: engineering needed to confirm nothing downstream (including Salesforce lead creation) depended on the fields we were removing, and data teams had to sign off on the same before anything shipped. Phase 2's in-code collaboration with engineering is only possible because that groundwork was already settled.
+
+  **What's next**
+
+  Phase 2 is still in progress: migrating the shipped phase 1 improvements into the new design system while using the rebuild as a chance for further UX gains, not just a like-for-like port. Beyond that, the "later" bucket from phase 1, new approaches to collecting the data we deliberately didn't touch, is still open. The lesson I'm carrying forward from both phases so far: the instinct to remove more isn't always right, and the instinct to add a moment of context isn't always wrong. Test the assumption, not just the friction.
+
+  **Why this project matters**
+  - I modeled the business case (app-start gap, revenue impact) before asking for design and engineering resources, not after
+  - I won a real disagreement about the warm welcome with a test, not with authority
+  - I'm working directly in code with engineering on phase 2, catching design/engineering mismatches earlier than a typical handoff allows
 ---
-
-## Overview
-
-Replace this with the context: what the problem was, who it was for, and
-why it mattered.
-
-## Approach
-
-Describe how you got from problem to solution. This is a good place to
-break down process, key decisions, and trade-offs.
-
-## Outcome
-
-Summarize the result — metrics, qualitative feedback, or what shipped.
