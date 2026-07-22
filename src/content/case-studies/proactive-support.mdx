@@ -1,25 +1,80 @@
 ---
-title: "Proactive Support"
-summary: "An AI-powered support experience that meets user's where they're at, anticipating friction points before they become problems."
-date: "2026-07-19"
-year: "2026"
-role: "Design & Engineering"
+title: "The Guide"
+summary: "Guild's proactive, integrated member support experience — evolved from a scoped AI Coach that shipped, flopped, and revealed a routing problem instead of a coaching one."
+date: "2026-07-22"
+year: "2025–2026"
+role: "Ongoing"
 tags: ["Next.js", "Design Systems", "Case Study"]
 image: "/case-studies/proactive-support.png"
 published: true
 passwordProtected: true
+roleDetail: "Lead designer, research through prototyping, on both the original AI Coach and its successor."
+product: "Member-facing, built on Sierra (Guild's AI chat platform)."
+team: "Myself as lead designer, a PM, an applied scientist, 2 engineers. Head of coaching consulted on methodology."
+overview: |
+  (formerly: AI Coach)
+
+  Guild is an education benefit platform that helps working adults build skills for career growth.
+
+  The Guide is Guild's proactive, integrated member support experience, in progress. It started as a narrower bet: an AI Coach, built to translate Guild's coaching methodology into a conversational product. That version shipped and didn't work. This case study covers both halves: what I built, why it failed, and what we're building instead.
+discoverHeading: "Problem"
+discoverBody: |
+  Growth coaching drives real persistence gains at Guild, up to 4 points on degree completion. Only 13% of eligible learners ever use it. The stated reason: access friction. Members don't always know coaching exists, don't have time for a live session, or aren't sure it's worth the investment.
+
+  The brief I was handed: build a conversational AI version of coaching that hesitant or time-constrained members could use instead.
+
+  **Who we talked to**
+
+  Five rounds of prototype testing between November and January, combining a Ballpark lookalike panel with real Guild members, comparing three formats: open chat, structured chat, and voice.
+
+  **Key insights**
+  - Users wanted advice, not questions. 55% of respondents across rounds complained the AI asked too many questions before giving anything actionable.
+  - Structured chat outperformed open chat on usefulness (3.83 vs. 3.33) and actionability (3.92 vs. 3.33).
+  - Voice underperformed both on every retention metric, despite scoring well on emotional openness in the moment.
+  - Generic, robotic tone was the single most common complaint, cited by half of respondents.
+defineHeading: "Opportunity"
+defineBody: |
+  Guild's own funnel data shows members who get support, coaching or traditional, progress through the funnel at meaningfully higher rates than members who don't. The opportunity was to get more members that support, faster.
+
+  **Strategic decision**
+
+  Scope narrowly first: prove that an AI-driven coaching interaction could hold value on its own, before touching where or how members found it. This was a deliberate sequencing choice, not an oversight, get the interaction right, then worry about placement.
+
+  **Hypothesis**
+
+  If we translate Guild's coaching methodology into a conversational AI Coach, learners who wouldn't otherwise book a live session will engage with it, and that engagement will drive persistence.
+developHeading: "Ideate & Validate"
+developBody: |
+  I rewrote Guild's system prompt around one governing rule: synthesize, don't reflect. The AI needed to name what a learner said and move to a recommendation, not mirror it back or stay in inquiry mode, directly responding to the top research complaint. Every recommendation required a verb, a timeframe, and a tie back to what the learner had actually said.
+
+  Based on the modality testing, I ruled out voice as a primary interaction mode and built the experience chat-first: 3–4 discovery questions max, then 2–3 concrete recommendations, then a co-authored next step.
+deliverHeading: "Validation & Outcome"
+deliverBody: |
+  The AI Coach shipped against that narrow brief. Usage stayed in the range of two to three dozen members total, and of those, only about half actually wanted coaching. The rest had come in with something else entirely.
+
+  Two hypotheses explained the flop:
+  - The value proposition wasn't landing, members didn't understand what they'd get out of it.
+  - Members were reaching support at the wrong moment for coaching to matter. There was no visible CTA pointing them toward it from the entry points they actually used, and by the time they got there, they had a more immediate need, a benefit question, a drop-out risk, something tactical, not a coaching conversation.
+
+  The second hypothesis is what stuck. Almost no one clicked into coaching not because the AI was bad, but because coaching was never the thing they came in looking for.
+
+  That reframed the problem. It wasn't a coaching-product problem, it was a routing problem: Guild had one entry point built around an assumption (members want coaching) instead of built around what members actually needed in the moment, tactical or emotional. The pivot to integrated support followed from both an honest read of that gap and Guild's own funnel data: members who get support convert at meaningfully higher rates at every stage, sometimes by double digits. Unifying support wasn't just a better member experience, it was a direct lever on funnel progression, which is where Guild's revenue actually sits.
+
+  This part of the project is in flight. The current MVP prioritizes the highest-volume, most concrete case first: proactively surfacing tactical support during application, when members have specific process questions. The original coaching entry point stays in the product, but usage there isn't expected to be high, that's no longer the primary bet. The real architectural shift is what comes after: moving from two separate surfaces (a coaching agent and a support agent) to one agent able to hold both kinds of conversation, so the member never has to guess which door to walk through.
+
+  **Reflections**
+
+  If I did this again, I'd:
+  - Validate whether members recognize a coaching-vs-support distinction at all before building a scoped AI Coach on the assumption that they do.
+  - Treat "does anyone click into this at all" as its own early hypothesis, separate from whether the coaching content behind it is good.
+  - Push for a defined usage threshold going in, so a flop is legible early rather than something you back into after two to three dozen users.
+
+  **Key takeaway**
+
+  A well-built feature can still fail if it's solving the problem at the wrong altitude. The AI Coach was a good answer to "how do we make coaching easier to access." It wasn't the answer to "why aren't members getting the help they actually need," which turned out to be a routing problem, not a coaching problem.
+
+  **Why this project matters**
+  - I owned the reframe after a real, low-usage failure, not a clean pivot dressed up after the fact
+  - I carried the system-prompt and modality research forward instead of treating the failed launch as wasted work
+  - I'm now leading design on the single-agent model this pivot is building toward
 ---
-
-## Overview
-
-Replace this with the context: what the problem was, who it was for, and
-why it mattered.
-
-## Approach
-
-Describe how you got from problem to solution. This is a good place to
-break down process, key decisions, and trade-offs.
-
-## Outcome
-
-Summarize the result — metrics, qualitative feedback, or what shipped.
