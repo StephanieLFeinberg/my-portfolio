@@ -1,26 +1,96 @@
 ---
 title: "Comparison Tool"
-summary: "A comparison feature that allows users to view multiple programs at once and decide which is best for them."
+summary: "A program comparison tool A/B tested with 100,000+ users — deprecated after mixed results, with a clear read on what data was missing."
 date: "2026-07-19"
 year: "2024"
-role: "Design & Engineering"
+role: "2-month initiative"
 tags: ["Next.js", "Design Systems", "Case Study"]
 image: "/case-studies/comparison-tool.png"
 previewBg: "#F8F2E9"
 published: true
 passwordProtected: true
+roleDetail: "Partner designer with a staff designer."
+product: "Customer-facing product."
+team: "Myself, staff designer, 5 engineers, product manager, UX writer, data analytics."
+overview: |
+  A program comparison tool that helps learners make informed decisions and go back to school.
+discoverHeading: "Problem"
+discoverBody: |
+  Users had no way of getting a snapshot of key program details, which led to confusion and churn. The number of programs to choose from increased every year, and drop-out rates were increasing.
+
+  The project kicked off with two weeks of user interviews, competitor analysis, and data synthesis. We reviewed over 45 attributes and prioritized them based on user interviews, tested comprehension of our copy with 150 participants, and mined insights from 11 research decks and stakeholder interviews.
+
+  **Key pain points discovered**
+  - Confusion about differences between similar programs
+  - Heavy reliance on external tools (e.g., tabs, spreadsheets)
+  - Misalignment between member expectations and actual program delivery
+
+  **Notable stats**
+  - 60% of learners had narrowed options to 2+ similar programs
+  - 37% paused/stopped out of their program
+  - 33% cite "program misfit" as the reason for churn
+  - Members wanted to compare: cost, time, modality, outcomes
+defineHeading: "Solution"
+defineBody: |
+  **Hypothesis**
+
+  A single-pane comparison of multiple programs and their attributes enables members to feel more confident and informed in taking the next step to apply (convert).
+
+  A tool for users to quickly compare programs. Key differences are highlighted, with the most important information at the top. Users can easily jump from detail pages to the comparison tool with one click.
+developHeading: "Ideate"
+developBody: |
+  We spent 3 days sketching initial concepts once we'd validated the overall approach and content. Knowing a comparison tool is a common pattern, we looked at industry experts like CarMax and Apple for inspiration, developed design principles, and quickly sketched a solution from there.
+
+  We narrowed the MVP attributes into 3 groups:
+  - Sticky header (program name, school, application CTA)
+  - Highlights
+  - Differences & Similarities
+
+  **Responsive design exploration — mobile was tricky**
+
+  [Image placeholder: Mobile option A — compare 2 programs]
+
+  This option was intuitive, but we didn't like that users could only compare two programs on mobile.
+
+  [Image placeholder: Mobile option B — compare up to 5 programs]
+
+  This is the option we chose: users can still compare up to 5 programs on mobile. Implementation was more complex, but we believed it was worth it since over 50% of our users were on mobile.
+
+  **Final designs**
+
+  [Image placeholder: Final designs]
+
+  **Design principles**
+  - Maximize comparability
+  - Reduce cognitive load
+  - Use clear, familiar terms and tooltips
+  - Anchor with a sticky header for easy comparison
+deliverHeading: "Validate"
+deliverBody: |
+  With designs ready to go in less than a month after kick-off, we ran an A/B test reaching over 100,000 users. Results were mixed.
+
+  **Metrics tracked**
+  - % of users who clicked on a program and began application, compared to control
+  - % of users who started a program application, compared to control
+  - Application-start-to-enrollment-verified rates, compared to control
+
+  **Results**
+  - Only 12% of users engaged with the feature
+  - Those who used it saw a 13.7pp higher click-to-application-start rate
+  - Application-start-to-submit rates declined for the general experiment group
+
+  Given the mixed results, we decided to deprecate the feature.
+
+  **Reflections**
+
+  I wish we had added more information to the tool before making that call. The working hypothesis was that the tool added visual clutter and distracted users. But I believe that if we'd invested more time in surfacing the right data, users would have found the tool more helpful — and application rates may have increased.
+
+  Research later showed that three important data points were missing:
+  - Class format (asynchronous vs. scheduled sessions)
+  - Availability of disability support or assistance
+  - Outcome metrics, such as graduation rates
+
+  Looking ahead, I'd recommend exploring guided-discovery UIs that reduce choice overload and surface the attributes we had strong evidence users value most.
+
+  Thank you for reading!
 ---
-
-## Overview
-
-Replace this with the context: what the problem was, who it was for, and
-why it mattered.
-
-## Approach
-
-Describe how you got from problem to solution. This is a good place to
-break down process, key decisions, and trade-offs.
-
-## Outcome
-
-Summarize the result — metrics, qualitative feedback, or what shipped.
